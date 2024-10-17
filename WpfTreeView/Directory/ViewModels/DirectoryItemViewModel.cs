@@ -6,7 +6,7 @@ using System.Windows.Input;
 namespace WpfTreeView
 {
     //public class DirectoryItemViewModel : BaseViewModel
-    public class DirectoryItemViewModel : ObservableObject
+    public partial class DirectoryItemViewModel : ObservableObject
     {
         #region Public Properties
         public DirectoryItemType Type { get; set; }
@@ -42,15 +42,9 @@ namespace WpfTreeView
         }
         #endregion
 
-        #region Public Commands
-        public ICommand ExpandCommand { get; set; }
-        #endregion
-
         #region Constructor
         public DirectoryItemViewModel(string fullPath, DirectoryItemType type)
         {
-            this.ExpandCommand = new RelayCommand(Expand);
-
             this.FullPath = fullPath;
             this.Type = type;
 
@@ -67,7 +61,7 @@ namespace WpfTreeView
                 this.Children.Add(null);
         }
         #endregion
-
+        [RelayCommand]
         private void Expand()
         {
             if (this.Type == DirectoryItemType.File)

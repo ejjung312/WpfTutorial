@@ -49,4 +49,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Directory\ViewModels\Base\" />
+  </ItemGroup>
+
 </Project>
