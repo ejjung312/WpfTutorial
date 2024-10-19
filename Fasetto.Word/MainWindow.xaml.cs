@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Fasetto.Word.ViewModel;
 
 namespace Fasetto.Word
 {
@@ -19,6 +20,8 @@ namespace Fasetto.Word
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new WindowViewModel(this);
         }
     }
 }
