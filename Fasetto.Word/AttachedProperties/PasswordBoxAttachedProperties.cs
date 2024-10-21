@@ -3,9 +3,6 @@ using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
-    /// <summary>
-    /// The MonitorPassword attached property for a <see cref="PasswordBox"/>
-    /// </summary>
     public class MonitorPasswordProperty : BaseAttachedProperty<MonitorPasswordProperty, bool>
     {
         public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)

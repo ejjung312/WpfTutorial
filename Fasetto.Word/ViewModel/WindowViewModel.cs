@@ -9,9 +9,9 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace Fasetto.Word.ViewModel
+namespace Fasetto.Word
 {
-    public class WindowViewModel : ObservableObject
+    public class WindowViewModel : BaseViewModel
     {
         private Window mWindow;
 
@@ -51,7 +51,8 @@ namespace Fasetto.Word.ViewModel
         {
             get
             {
-                return mWindow.WindowState == WindowState.Maximized ? 0 : mWindowRadius;
+                // If it is maximized or docked, no border
+                return Borderless ? 0 : mWindowRadius;
             }
             set
             {
@@ -63,7 +64,7 @@ namespace Fasetto.Word.ViewModel
 
         public int TitleHeight { get; set; } = 42;
 
-        public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder    ); } }
+        public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder ); } }
 
         public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 

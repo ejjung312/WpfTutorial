@@ -6,13 +6,31 @@ using System;
 
 namespace Fasetto.Word
 {
-    public class BasePage : Page
+    public class BasePage<VM> : Page
+        where VM : BaseViewModel, new()
     {
+        private VM mViewModel;
+
         public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
 
         public PageAnimation PageUnLoadAnimation { get; set; } = PageAnimation.SlideAndFadeOutToLeft;
 
         public float SlideSeconds { get; set; } = 0.8f;
+
+        public VM ViewModel { 
+            get
+            {
+                return mViewModel;
+            } 
+            set
+            {
+                if (mViewModel == value) return;
+
+                mViewModel = value;
+
+                this.DataContext = mViewModel;
+            } 
+        }
 
         public BasePage()
         {
@@ -20,6 +38,8 @@ namespace Fasetto.Word
                 this.Visibility = Visibility.Collapsed;
 
             this.Loaded += BasePage_Loaded;
+
+            this.ViewModel = new VM();
         }
 
         private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
