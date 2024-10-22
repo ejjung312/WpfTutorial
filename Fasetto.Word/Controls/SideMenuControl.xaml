@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fasetto.Word"
+             xmlns:fa5="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -24,15 +25,18 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Orientation="Horizontal">
-                            <Button Content="{StaticResource FontAwesomeChatIcon}" Style="{StaticResource IconButton}"/>
-                            <Button Content="{StaticResource FontAwesomeUserIcon}" Style="{StaticResource IconButton}"/>
-                            <Button Content="{StaticResource FontAwesomePictureIcon}" Style="{StaticResource IconButton}"/>
+                            <Button fa5:Awesome.Content="Solid_Comments" Style="{StaticResource IconButton}"/>
+
+                            <Button fa5:Awesome.Content="Solid_User" Style="{StaticResource IconButton}"/>
+                            <Button fa5:Awesome.Content="Regular_Image" Style="{StaticResource IconButton}"/>
                         </StackPanel>
 
-                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Content="{StaticResource FontAwesomeCogIcon}" Style="{StaticResource IconButton}"/>
+                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" 
+                                fa5:Awesome.Content="Solid_Cog"
+                                Style="{StaticResource IconButton}"/>
+                        
                     </Grid>
-                    
-                    
+
                     <ContentPresenter Grid.Row="1"/>
                 </Grid>
             </Border>

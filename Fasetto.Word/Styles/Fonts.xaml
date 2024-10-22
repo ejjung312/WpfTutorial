@@ -5,7 +5,6 @@
     <FontFamily x:Key="LatoRegular">pack://application:,,,/Fonts/#Lato Regular</FontFamily>
     <FontFamily x:Key="LatoThin">pack://application:,,,/Fonts/#Lato Thin</FontFamily>
     <FontFamily x:Key="LatoBold">pack://application:,,,/Fonts/#Lato Bold</FontFamily>
-    <FontFamily x:Key="FontAwesome">pack://appliction;,,,/Fonts/#FontAwesome</FontFamily>
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}"/>
@@ -24,9 +23,4 @@
     <system:Double x:Key="FontSizeRegular">20</system:Double>
     <system:Double x:Key="FontSizeSmall">14</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
-
-    <system:String x:Key="FontAwesomeChatIcon">&#xf110;</system:String>
-    <system:String x:Key="FontAwesomeUserIcon">&#xf110;</system:String>
-    <system:String x:Key="FontAwesomePictureIcon">&#xf110;</system:String>
-    <system:String x:Key="FontAwesomeCogIcon">&#xf110;</system:String>
 </ResourceDictionary>
