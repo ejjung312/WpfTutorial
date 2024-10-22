@@ -19,8 +19,8 @@ namespace Fasetto.Word
         private int mWindowRadius = 10;
         private WindowDockPosition mDockPosition = WindowDockPosition.Undocked;
 
-        public double WindowMinimumWidth { get; set; } = 400;
-        public double WindowMinimumHeight { get; set; } = 400;
+        public double WindowMinimumWidth { get; set; } = 800;
+        public double WindowMinimumHeight { get; set; } = 500;
 
         public bool Borderless { get {
                 return (mWindow.WindowState == WindowState.Maximized
@@ -66,7 +66,7 @@ namespace Fasetto.Word
 
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder ); } }
 
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         public RelayCommand MinimizeCommand { get; set; }
 
