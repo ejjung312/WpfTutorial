@@ -12,12 +12,16 @@ namespace Fasetto.Word
 
         public RelayCommand<object> LoginCommand { get; set; }
 
+        public RelayCommand RegisterCommand { get; set; }
+
         public LoginViewModel()
         {
-            LoginCommand = new RelayCommand<object>(async (parameter) => await Login(parameter));
+            LoginCommand = new RelayCommand<object>(async (parameter) => await LoginAsync(parameter));
+
+            RegisterCommand = new RelayCommand(async () => await RegisterAsync());
         }
 
-        public async Task Login(object parameter)
+        public async Task LoginAsync(object parameter)
         {
             await RunCommand(() => this.LoginIsRunning, async () =>
             {
@@ -26,6 +30,13 @@ namespace Fasetto.Word
                 var email = this.Email;
                 var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
+        }
+
+        public async Task RegisterAsync()
+        {
+            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Register;
+
+            await Task.Delay(1);
         }
     }
 }

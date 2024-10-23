@@ -11,6 +11,10 @@ namespace Fasetto.Word
             {
                 case ApplicationPage.Login:
                     return new LoginPage();
+
+                case ApplicationPage.Register:
+                    return new RegisterPage();
+
                 case ApplicationPage.Chat:
                     return new ChatPage();
 
